@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
 
-const allowedOrigins = ['https://react-auth-greatstack-frontend.onrender.com/']
+const allowedOrigins = 'https://react-auth-greatstack-frontend.onrender.com'
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({origin: allowedOrigins, credentials: true})); //so that we can send cookies in express app
