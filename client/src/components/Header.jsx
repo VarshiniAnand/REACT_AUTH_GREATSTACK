@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/AppContext'
+import {useNavigate} from 'react-router-dom';
 
 const Header = () => {
   const {userData} = useContext(AppContext);
+  const navigate = useNavigate();
 
   return (
     <div className='flex flex-col items-center mt-40 px-4 text-center text-gray-800'>
@@ -13,7 +15,7 @@ const Header = () => {
         
         <h2 className='text-3xl sm:text-5xl font-semibold mb-4'>Welcome to our app</h2>
         <p className='mb-8 max-w-md'>Let's start with a quick product tour and we will have you up and running in no time!</p>
-        <button className='bg-[#1A1A1A] border rounded-full px-8 py-2.5 text-white hover:text-[#00D1A1] cursor-pointer transition-all transitioin-all'>Get Started</button>
+        <button className='bg-[#1A1A1A] border rounded-full px-8 py-2.5 text-white hover:text-[#00D1A1] cursor-pointer transition-all transitioin-all' onClick={()=>{navigate('/login')}}>Get Started</button>
     </div>
   )
 }
